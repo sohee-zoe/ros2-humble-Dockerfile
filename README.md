@@ -63,6 +63,11 @@ docker run \
     tail -f /dev/null
 ```
 
+## Docker exec
+```bash
+docker exec -it <container_name> /bin/zsh
+```
+
 
 ## SSH
 ```bash
