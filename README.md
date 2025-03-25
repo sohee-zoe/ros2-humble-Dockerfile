@@ -1,5 +1,6 @@
 # ros2-humble-Dockerfile
 Ubuntu 22.04  ROS 2 Humble
+Base Image: osrf/ros:humble-desktop-full
 
 
 ## NVIDIA Container Toolkit
