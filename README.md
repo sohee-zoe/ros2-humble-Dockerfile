@@ -16,30 +16,24 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
 
-
 ```bash
 sudo apt-get update
 sudo apt-get install -y nvidia-container-toolkit
 ```
 
-  
 ```bash
 sudo nvidia-ctk runtime configure --runtime=docker --set-as-default
 ```
-
 
 ```bash
 sudo systemctl restart docker
 ```
 
 
-
 ## Docker Build
 ```bash
 docker build --build-arg passwd=<root_password> -t <container_name> .
 ```
-
-
 
 
 ## Docker Run
@@ -63,9 +57,15 @@ docker run \
     tail -f /dev/null
 ```
 
+
 ## Docker exec
 ```bash
 docker exec -it <container_name> /bin/zsh
+```
+
+## zsh Shell
+```bash
+sudo chsh -s $(which zsh)
 ```
 
 
