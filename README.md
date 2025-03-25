@@ -1,6 +1,11 @@
 # ros2-humble-Dockerfile
-Ubuntu 22.04  ROS 2 Humble
-Base Image: osrf/ros:humble-desktop-full
+Ubuntu 22.04   
+
+ROS 2 Humble   
+
+Base Image: osrf/ros:humble-desktop-full   
+
+
 
 
 ## NVIDIA Container Toolkit
@@ -11,24 +16,31 @@ curl -fsSL https://nvidia.github.io/libnvidia-container/gpgkey | sudo gpg --dear
     sudo tee /etc/apt/sources.list.d/nvidia-container-toolkit.list
 ```
 
+
 ```bash
 sudo apt-get update
 sudo apt-get install -y nvidia-container-toolkit
 ```
 
+  
 ```bash
 sudo nvidia-ctk runtime configure --runtime=docker --set-as-default
 ```
+
 
 ```bash
 sudo systemctl restart docker
 ```
 
 
+
 ## Docker Build
 ```bash
 docker build --build-arg passwd=<root_password> -t <container_name> .
 ```
+
+
+
 
 ## Docker Run
 ```bash
@@ -50,6 +62,7 @@ docker run \
     <container_name> \
     tail -f /dev/null
 ```
+
 
 ## SSH
 ```bash
