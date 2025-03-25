@@ -18,6 +18,7 @@ RUN sed -i 's/archive.ubuntu.com/mirror.kakao.com/' /etc/apt/sources.list && \
     locales \
     openssh-server \
     net-tools \
+    gazebo \
     && rm -rf /var/lib/apt/lists/*
 
 # 로케일 설정 (zsh 오류 방지)
@@ -50,9 +51,7 @@ RUN echo 'export LC_NUMERIC="en_US.UTF-8"' >> ~/.zshrc && \
 
 # mise + uv
 RUN curl https://mise.run | sh && \
-    echo 'eval "$($HOME/.local/bin/mise activate zsh)"' >> ~/.zshrc && \
-    echo 'mise use -g python@3.10' >> ~/.zshrc && \
-    echo 'mise use -g uv@latest' >> ~/.zshrc
+    echo 'eval "$($HOME/.local/bin/mise activate zsh)"' >> ~/.zshrc &&
 
 # 서비스 시작 스크립트
 COPY entrypoint.sh /entrypoint.sh
