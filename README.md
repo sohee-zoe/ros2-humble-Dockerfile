@@ -37,6 +37,12 @@ chmod 600 .passwd
 docker build --secret id=passwd,src=.passwd -t <image_name> .
 ```
 
+```bash
+echo "root:1234" > .passwd
+chmod 600 .passwd
+docker build --secret id=passwd,src=.passwd -t ros2-humble .
+```
+
 
 ## Docker Run
 ```bash
@@ -59,10 +65,34 @@ docker run \
     tail -f /dev/null
 ```
 
+```bash
+docker run \
+    --name ros2 \
+    --hostname humble \
+    -itd \
+    --net host \
+    --restart always \
+    --privileged \
+    --runtime nvidia \
+    --gpus all \
+    -e DISPLAY=unix$DISPLAY \
+    -e QT_X11_NO_MITSHM=1 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+    -v $HOME/.Xauthority:/root/.Xauthority:rw \
+    -v $HOME/project/ros2/humble/ws:/root/ws \
+    -w /root/ws \
+    ros2-humble \
+    tail -f /dev/null
+```
+
 
 ## Docker exec
 ```bash
 docker exec -it <container_name> /bin/zsh
+```
+
+```bash
+docker exec -it ros2 /bin/zsh
 ```
 
 
