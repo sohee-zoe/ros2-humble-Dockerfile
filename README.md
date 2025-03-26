@@ -65,16 +65,12 @@ docker run \
 docker exec -it <container_name> /bin/zsh
 ```
 
+
 ## zsh Shell
 ```bash
 sudo chsh -s $(which zsh)
 ```
 
-
-## SSH
-```bash
-ssh root@<host_ip> -p <host_port>
-```
 
 ## mise + uv + python
 ```bash
