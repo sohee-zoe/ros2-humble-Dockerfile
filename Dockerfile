@@ -51,7 +51,7 @@ RUN echo 'export LC_NUMERIC="en_US.UTF-8"' >> ~/.zshrc && \
 
 # mise + uv
 RUN curl https://mise.run | sh && \
-    echo 'eval "$($HOME/.local/bin/mise activate zsh)"' >> ~/.zshrc &&
+    echo 'eval "$($HOME/.local/bin/mise activate zsh)"' >> ~/.zshrc
 
 # 서비스 시작 스크립트
 COPY entrypoint.sh /entrypoint.sh
