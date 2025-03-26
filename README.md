@@ -44,6 +44,7 @@ docker run \
     --name <container_name> \
     --hostname <container_hostname> \
     -itd \
+    --net host \
     --restart always \
     --privileged \
     --runtime nvidia \
@@ -54,7 +55,6 @@ docker run \
     -v $HOME/.Xauthority:/root/.Xauthority:rw \
     -v $HOME/<host_workspace>:/root/<container_workspace> \
     -w /root/ws \
-    -p <host_port>:<container_port> \
     <container_name> \
     tail -f /dev/null
 ```
