@@ -108,3 +108,80 @@ mise use -g python@3.10
 mise use -g uv@latest
 exec zsh
 ```
+
+## Install dependencies packages
+```bash
+apt-get update
+apt-get install -y \
+    libbullet-dev \
+    python3-colcon-common-extensions \
+    python3-flake8 \
+    python3-pip \
+    python3-pytest-cov \
+    python3-rosdep \
+    python3-setuptools \
+    python3-vcstool
+```
+- `build-essential`: 빌드 도구
+- `libbullet-dev`: Bullet 물리 엔진 라이브러리
+- `python3-colcon-common-extensions`, `python3-vcstool`, `python3-rosdep`, `python3-setuptools`: 빌드 도구 colcon, vcstool, rosdep 등을 위한 Python 패키지
+- `python3-flake8`, `python3-pytest-cov`: Python 코드 스타일 체커와 테스트 도구
+
+
+```bash
+# 미들웨어 구현체 (Fast-RTPS, CycloneDDS)
+apt-get install -y \
+    ros-humble-rmw-fastrtps-cpp \
+    ros-humble-rmw-cyclonedds-cpp
+
+# Gazebo 패키지
+apt-get install -y \
+    ros-humble-gazebo-ros \
+    ros-humble-gazebo-ros-pkgs \
+    ros-humble-gazebo-ros2-control
+
+# SLAM 패키지
+apt-get install -y \
+    ros-humble-slam-toolbox
+
+# Cartographer 패키지
+apt-get install -y \
+    ros-humble-cartographer \
+    ros-humble-cartographer-ros
+    
+# Navigation2 패키지
+apt-get install -y \
+    ros-humble-navigation2 \
+    ros-humble-nav2-bringup 
+    
+# ROS2 motion planning 프레임워크
+apt-get install -y \
+    ros-humble-moveit
+    
+# 로봇 상태 및 TF 관련 패키지
+apt-get install -y \
+    ros-humble-joint-state-publisher \
+    ros-humble-robot-state-publisher \
+    ros-humble-rqt-tf-tree \
+    ros-humble-xacro
+
+# 로봇 위치 추정 및 제어 관련 패키지
+apt-get install -y \
+    ros-humble-robot-localization \
+    ros-humble-twist-mux
+
+# 데이터 로깅 및 시각화 패키지
+apt-get install -y \
+    ros-humble-plotjuggler-ros \
+    ros-humble-ros2bag \
+    ros-humble-rosbag2-storage-default-plugins
+
+# 하드웨어 인터페이스 패키지
+apt-get install -y \
+    ros-humble-usb-cam
+
+# turtlebot3 로봇 플랫폼 패키지
+apt-get install -y \
+    ros-humble-turtlebot3 \
+    ros-humble-turtlebot3-msgs
+```
