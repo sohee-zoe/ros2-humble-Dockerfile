@@ -32,7 +32,9 @@ sudo systemctl restart docker
 
 ## Docker Build
 ```bash
-docker build --build-arg passwd=<root_password> -t <container_name> .
+echo "root:<password>" > .passwd
+chmod 600 .passwd
+docker build --secret id=passwd,src=.passwd -t <container_name> .
 ```
 
 
