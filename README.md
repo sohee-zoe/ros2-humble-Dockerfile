@@ -6,7 +6,12 @@ ROS 2 Humble
 Base Image: osrf/ros:humble-desktop-full   
 
 
-
+## XServer
+```bash
+xhost +local:docker
+echo 'xhost +local:docker' | sudo tee /etc/profile.d/xhost.sh
+sudo chmod +x /etc/profile.d/xhost.sh
+```
 
 ## NVIDIA Container Toolkit
 ```bash
