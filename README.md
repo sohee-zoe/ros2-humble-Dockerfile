@@ -34,7 +34,7 @@ sudo systemctl restart docker
 ```bash
 echo "root:<password>" > .passwd
 chmod 600 .passwd
-docker build --secret id=passwd,src=.passwd -t <container_name> .
+docker build --secret id=passwd,src=.passwd -t <image_name> .
 ```
 
 
@@ -55,7 +55,7 @@ docker run \
     -v $HOME/.Xauthority:/root/.Xauthority:rw \
     -v $HOME/<host_workspace>:/root/<container_workspace> \
     -w /root/ws \
-    <container_name> \
+    <image_name> \
     tail -f /dev/null
 ```
 
