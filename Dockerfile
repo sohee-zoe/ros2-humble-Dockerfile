@@ -1,7 +1,7 @@
 # 베이스 이미지 (ROS2 Humble Desktop Full)
 FROM osrf/ros:humble-desktop-full
 
-ARG ROOT_PASSWORD=${passwd}
+ARG passwd
 
 # 패키지 설치
 RUN sed -i 's/archive.ubuntu.com/mirror.kakao.com/' /etc/apt/sources.list && \
@@ -32,7 +32,7 @@ ENV LC_ALL en_US.UTF-8
 RUN mkdir /var/run/sshd && \
     sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config && \
-    echo "root:${ROOT_PASSWORD}" | chpasswd
+    echo "root:${passwd}" | chpasswd
 
 # ZSH 설정
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.2.1/zsh-in-docker.sh)" -- \
