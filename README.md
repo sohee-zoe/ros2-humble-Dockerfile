@@ -76,7 +76,7 @@ ssh root@<host_ip> -p <host_port>
 
 ## mise + uv + python
 ```bash
-echo 'mise use -g python@3.10' >> ~/.zshrc
-echo 'mise use -g uv@latest' >> ~/.zshrc
+mise use -g python@3.10
+mise use -g uv@latest
 exec zsh
 ```
