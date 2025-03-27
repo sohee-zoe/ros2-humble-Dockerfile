@@ -108,9 +108,12 @@ mise use -g uv@latest
 echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
 echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
 exec zsh
+
+uv venv --python=3.10
+source .venv/bin/actiavte
 ```
 
-### (Option 2) pyenv
+### (Option 2) pyenv + virtualenv
 ```bash
 curl -fsSL https://pyenv.run | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
@@ -118,8 +121,13 @@ echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zsh
 echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
 exec zsh
 
+apt-get install -y libbz2-dev libncurses5-dev libffi-dev libreadline-dev libsqlite3-dev liblzma-dev
 pyenv install 3.10
 pyenv global 3.10
+
+sudo apt install virtualenv
+virtualenv .venv
+source .venv/bin/activate
 ```
 
 
