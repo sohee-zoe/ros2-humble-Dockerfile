@@ -100,8 +100,8 @@ docker exec -it <container_name> /bin/zsh
 docker exec -it ros2 /bin/zsh
 ```
 
-
-## mise + uv + python
+## Python Setting
+### (Option 1) mise + uv + python
 ```bash
 mise use -g python@3.10
 mise use -g uv@latest
@@ -110,7 +110,7 @@ echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
 exec zsh
 ```
 
-## pyenv
+### (Option 2) pyenv
 ```bash
 curl -fsSL https://pyenv.run | bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
