@@ -101,12 +101,6 @@ docker exec -it ros2 /bin/zsh
 ```
 
 
-## zsh Shell
-```bash
-sudo chsh -s $(which zsh)
-```
-
-
 ## mise + uv + python
 ```bash
 mise use -g python@3.10
