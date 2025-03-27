@@ -270,6 +270,7 @@ python3 -m pip install -U \
     cryptography \
     empy \
     ifcfg \
+    jinja2 \
     lark-parser \
     lxml \
     netifaces \
@@ -278,6 +279,7 @@ python3 -m pip install -U \
     pyparsing \
     pyyaml \
     setuptools \
+    typeguard \
     rosdistro
 python3 -m pip install -U pydot PyQt5
 ```
