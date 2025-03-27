@@ -110,6 +110,19 @@ echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
 exec zsh
 ```
 
+## pyenv
+```bash
+curl -fsSL https://pyenv.run | bash
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo '[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init - zsh)"' >> ~/.zshrc
+exec zsh
+
+pyenv install 3.10
+pyenv global 3.10
+```
+
+
 ## Install dependencies packages
 ```bash
 apt-get update
