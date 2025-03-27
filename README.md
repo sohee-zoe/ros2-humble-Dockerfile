@@ -111,6 +111,8 @@ sudo chsh -s $(which zsh)
 ```bash
 mise use -g python@3.10
 mise use -g uv@latest
+echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
+echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
 exec zsh
 ```
 
