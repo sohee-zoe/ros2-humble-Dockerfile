@@ -108,9 +108,6 @@ mise use -g uv@latest
 echo 'eval "$(uv generate-shell-completion zsh)"' >> ~/.zshrc
 echo 'eval "$(uvx --generate-shell-completion zsh)"' >> ~/.zshrc
 exec zsh
-
-uv venv --python=3.10
-source .venv/bin/actiavte
 ```
 
 ### (Option 2) pyenv + virtualenv
@@ -126,10 +123,7 @@ pyenv install 3.10
 pyenv global 3.10
 
 sudo apt install virtualenv
-virtualenv .venv
-source .venv/bin/activate
 ```
-
 
 ## Install dependencies packages
 ```bash
@@ -208,7 +202,14 @@ apt-get install -y \
     ros-humble-turtlebot3-msgs
 ```
 
-## Virtual Enviroenment Using UV
+## Virtual Enviroenment 
+### Default
+```bash
+virtualenv .venv
+source .venv/bin/activate
+```
+
+### UV
 ```bash
 uv init
 uv venv --python=3.10
@@ -217,6 +218,24 @@ uv add pip setuptools wheel
 ```
 
 ## Python Packages
+### Default
+```bash
+python3 -m pip install -U \
+  argcomplete \
+  flake8-blind-except \
+  flake8-builtins \
+  flake8-class-newline \
+  flake8-comprehensions \
+  flake8-deprecated \
+  flake8-docstrings \
+  flake8-import-order \
+  flake8-quotes \
+  pytest-repeat \
+  pytest-rerunfailures \
+  pytest
+```
+
+### UV
 ```bash
 uv add argcomplete \
   flake8-blind-except \
@@ -232,6 +251,7 @@ uv add argcomplete \
   pytest
 ```
 
+
 ## C++ Libraries
 ```bash
 apt install --no-install-recommends -y \
@@ -241,6 +261,28 @@ apt install --no-install-recommends -y \
 ```
 
 ## PyQT
+### Default
+```bash
+apt-get install pyqt5-dev-tools
+python3 -m pip install --upgrade pip
+python3 -m pip install -U \
+    catkin_pkg \
+    cryptography \
+    empy \
+    ifcfg \
+    lark-parser \
+    lxml \
+    netifaces \
+    numpy \
+    opencv-python \
+    pyparsing \
+    pyyaml \
+    setuptools \
+    rosdistro
+python3 -m pip install -U pydot PyQt5
+```
+
+### UV
 ```bash
 apt-get install pyqt5-dev-tools
 uv add catkin_pkg \
